@@ -1,4 +1,4 @@
-# coding: utf-8
+# -- coding: utf-8 --
 # Copyright (c) 2015–2016 Molly White
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,6 +24,7 @@ import tweepy
 from secrets import *
 from time import gmtime, strftime
 import csv
+import unicodecsv as csv
 import markovify
 
 
@@ -54,7 +55,6 @@ def get_all_tweets(screen_name):
         print ("...%s tweets downloaded so far" % (len(alltweets)))
  
     outtweets = [[tweet.text] for tweet in alltweets]
-    outtweets = outtweets
  
     with open('%s_tweets.csv' % screen_name, 'w') as f:
         writer = csv.writer(f)
@@ -64,7 +64,7 @@ def create_tweet():
 	#"""Create the text of the tweet you want to send."""
 	# Replace this with your code!
 	get_all_tweets("pikero24")
-	with open("Eric_C_Wilder_tweets.csv", "r") as f:
+	with open("pikero24_tweets.csv", "r") as f:
 		text = f.read()
 	text = [word for word in text.split() if not "@" in word if not "#" in word]
 	text = " ".join(text)
