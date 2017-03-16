@@ -20,7 +20,11 @@
 # SOFTWARE.
 
 #TODO Check if new tweets before regenerating csv
+#TODO run automatically (learn more about AWS)
+#TODO Shortlist of acceptable people to @reply (maybe generate new tweet @ someone who tweets @me?)
 
+#WISHLIST RoboCadieux Conversation 
+#WISHLIST Sole Robo Mochat
 
 import os
 import tweepy
