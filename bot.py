@@ -93,8 +93,10 @@ def tweet(text):
         api.update_status(text)
     except tweepy.error.TweepError as e:
         log(e.message)
+        print(e.message)
     else:
         log("Tweeted: " + text)
+        print("Tweeted: " + text)
 
 
 def log(message):
@@ -108,5 +110,4 @@ def log(message):
 if __name__ == "__main__":
     initialize()
     tweet_text = create_tweet()
-    print("Tweeted: "+tweet_text)
     tweet(tweet_text)
